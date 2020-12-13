@@ -1,8 +1,8 @@
-from bs4 import BeautifulSoup as s
+from bs4 import BeautifulSoup as Parser
 
 
 def get_links(html_text):
-    sp = s(html_text)
-    links = sp.find('div', {'id':"DivProfessional"}).find("table").find_all("a")
-    agent_links = [i['href'] for i in links]
+    parsed_html = Parser(html_text)
+    links = parsed_html.find('div', {'id': "DivProfessional"}).find("table").find_all("a")
+    agent_links = [link['href'] for link in links]
     return agent_links
