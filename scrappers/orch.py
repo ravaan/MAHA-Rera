@@ -1,9 +1,9 @@
 import logging
 
-from application_ids import ids
 from rera.models import Organization, Application, RealEstateAgent, RealEstateAgentContract
 from scrappers import search
 from scrappers.agent_links import get_links
+from scrappers.application_ids import ids
 from scrappers.utils import send_http_request
 
 logger = logging.getLogger(__name__)
